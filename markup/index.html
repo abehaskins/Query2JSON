@@ -18,26 +18,31 @@
 		<div class="box left">
 			<h2>What is Query2JSON?</h2>
 			<div class="text">
-				Query2JSON solves a very simply problem and is a quick and easy way. Several services (i.e. Twilio) use RESTlike webhooks for reacting to incoming data. These services make requests like this.
+				Query2JSON solves a very simple and (arguably) uncommon problem. Several services (i.e. <a href="http://www.twilio.com" target="_blank">Twilio</a>) use webhooks to allow applications to react to incoming data. These services make requests like this when something happens (for example, an SMS is received).
 			</div>
 			<div class="blob">
-				http://www.yourwebsite.com/callback?cat=hat&fish=stick
+				<div class="text light">[Event Happens on FirstService]</div>
+				GET http://www.yourwebsite.com/callback?cat=hat&fish=stick
 			</div>
 			<div class="text">
-				This works fine if you're writing a custom application, but sometimes you need to "glue" the data from this service into another service or database host (i.e. Firebase). Some of these services expect requests like this. 
+				This works fine if you're writing a big 'ole custom application with servers and whatnot, but sometimes you need to "glue" the data from this service into another service or database host (i.e. Firebase) without all that hassle. However, not all services like to talk in exactly the same way and thus cannot talk directly to each other. <a href="http://www.firebase.com" target="_blank">Firebase</a>, for example, uses a JSON blob method to write data where the JSON is uploaded as the body of the request like this.
 			</div>
 			<div class="blob">
 				http://www.secondservice.com/youraccount/<br />
 				-> {"cat": "hat", "fish":"stick"}
 			</div>
 			<div class="text">
-				Query2JSON solves this little incompatibility by providing a way to translate the request without running your own server. A request with Query2JSON works like this. 
+				Sometimes you're lucky and the services you want to use are inheritly capable of sharing data and sometimes you're not. The problem arises when a service like Twilio (which uses HTTP query data method) attmepts to talk to a service like Firebase (which uses the JSON blob method). These services are extremely close to working together, but not quite. Query2JSON solves this little incompatibility by providing a way to translate the request without running your own server. A request with Query2JSON works like this. 
 			</div>
 			<div class="blob">
+				<div class="text light">[Event Happens on FirstService]</div>
 				http://www.query2json.com/{ID}?cat=hat&fish=stick<br />
 				<div class="text light">[Query2JSON Translates Request]</div>
 				http://www.secondservice.com/youraccount/<br />
 				-> {"cat": "hat", "fish":"stick"}
+			</div>
+			<div class="text">
+				It is as simple as that. You send me query data and I'll make another request with that data transformed into JSON. Boom, done.
 			</div>
 		</div>
 		<div class="box right">
