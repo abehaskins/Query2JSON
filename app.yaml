@@ -4,9 +4,6 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /markup
-  static_dir: markup
-
 - url: /styles
   static_dir: styles
 
@@ -16,5 +13,9 @@ handlers:
 - url: /images
   static_dir: images
 
-- url: /(:?.+)?
+- url: /
+  static_files: markup/index.html
+  upload: markup/(.*)
+
+- url: /.+
   script: main.py

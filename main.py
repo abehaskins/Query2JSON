@@ -2,27 +2,28 @@
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import util
 from django.utils import simplejson as json
+import urllib2
+
+import sys
+sys.path.insert(0, 'lib')
 from supermodel import *
 from bottle import *
 import bottle
-import urllib2
+
+
+domain = "http://www.query2json.com/"
 
 # Link Model
 class Link(SuperModel):
 	url 			= db.StringProperty(required=True)
 	response 		= db.StringProperty(required=True)
 
-# Home Page
-@route("/")
-def get():
-	return "My swag worth a billion"
-
 # Create a new Link
 @route("/new/")
 def get():
 	l = Link(url=bottle.request.query.url, response=bottle.request.query.response)
 	l.put()
-	return str(l.key())
+	return json.dumps({"url": domain + str(l.key())})	
 
 # Use a Link
 @route("/:tid")

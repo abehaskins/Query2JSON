@@ -1,0 +1,90 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-image: url(/images/bg.png);
+	font-family: Montserrat;
+}
+header {
+	height: 100px;
+	line-height: 103px;
+	background-image: url(/images/bg_blue.png);
+	padding: 0px;
+	margin: 0px;
+	color: white;
+	clear: both;
+	border-bottom: 3px solid #76A9F6;
+}
+article {
+	margin-top: 2px;
+	border-top: 3px solid #76A9F6;
+}
+.text {
+	font-size: 13px;
+	color: black;
+}
+.text.tiny {
+	font-size: 11px;
+	color: #666666;
+	font-family: 'Arial';
+}
+.text.light {
+	color: #7E7E7E;
+	margin: 5px 0px;
+}
+.blob {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: #666666;
+	background-image: url(/images/bg_grey.png);
+	font-size: 14px;
+	padding: 10px;
+	border-radius: 3px;
+}
+.blob#url {
+	background-color: #ccc;
+	background-image: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+h1 {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	font-size: 60px;
+}
+h2 {
+	font-size: 24px;
+	color: #666666;
+	font-weight: bold;
+}
+h3 {
+	color: #666666;
+	font-size: 13px;
+}
+.content {
+	margin: 0 auto;
+	width: 800px;
+}
+.box.left {
+	width: 480px;
+	float: left;
+}
+.box.right {
+	width: 300px;
+	float: right;
+}
+input {
+	width: 290px;
+	height: 36px;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding-left: 10px;
+}
+input:placeholder {
+	color: pink;
+}
+a {
+	color: black;
+}

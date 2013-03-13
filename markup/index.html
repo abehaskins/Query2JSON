@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Query2JSON</title>
+<link rel="stylesheet" href="styles/main.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="scripts/query2json.js"></script>
+</head>
+<body>
+<header>
+	<div class="content">
+		<h1>Query2JSON</h1>
+	</div>
+</header>
+<article>
+	<div class="content">
+		<div class="box left">
+			<h2>What is Query2JSON?</h2>
+			<div class="text">
+				Query2JSON solves a very simply problem and is a quick and easy way. Several services (i.e. Twilio) use RESTlike webhooks for reacting to incoming data. These services make requests like this.
+			</div>
+			<div class="blob">
+				http://www.yourwebsite.com/callback?cat=hat&fish=stick
+			</div>
+			<div class="text">
+				This works fine if you're writing a custom application, but sometimes you need to "glue" the data from this service into another service or database host (i.e. Firebase). Some of these services expect requests like this. 
+			</div>
+			<div class="blob">
+				http://www.secondservice.com/youraccount/<br />
+				-> {"cat": "hat", "fish":"stick"}
+			</div>
+			<div class="text">
+				Query2JSON solves this little incompatibility by providing a way to translate the request without running your own server. A request with Query2JSON works like this. 
+			</div>
+			<div class="blob">
+				http://www.query2json.com/{ID}?cat=hat&fish=stick<br />
+				<div class="text light">[Query2JSON Translates Request]</div>
+				http://www.secondservice.com/youraccount/<br />
+				-> {"cat": "hat", "fish":"stick"}
+			</div>
+		</div>
+		<div class="box right">
+			<h2>Make a Query2JSON</h2>
+			<input type="text" placeholder="JSON Accepting Callback"/>
+			<div class="output">
+				<h3>Your custom accepting URL</h3>
+				<div class="blob" id="url">
+					We love the nics
+				</div>
+			</div>
+			<h2>License & Disclaimer</h2>
+			<div class="text tiny">
+				Copyright &copy; 2013 <a href="http://www.abehaskins.com">Abe Haskins</a><br />
+				<br />
+				Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br />
+				<br />
+				The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br />
+				<br />
+				THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br />
+				<br />
+				<a href="http://www.github.com/abeisgreat/Query2JSON">[ Full Source Code ]</a>
+			</div>
+		</div>
+	</div>
+</article>
+<footer>
+
+</footer>
+</body>
+</html>
+             

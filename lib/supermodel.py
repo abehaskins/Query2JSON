@@ -1,4 +1,6 @@
-# Its like a model but with verification or some shit
+# Super models are extended versions of db.Model which allow for option
+# __in__ and __out__ fields which are arbitrary functions to coerse data
+# into the underlying model
 from google.appengine.ext import db
 from django.utils import simplejson as json
 import logging
