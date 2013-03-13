@@ -28,7 +28,7 @@
 				This works fine if you're writing a big 'ole custom application with servers and whatnot, but sometimes you need to "glue" the data from this service into another service or database host (i.e. Firebase) without all that hassle. However, not all services like to talk in exactly the same way and thus cannot talk directly to each other. <a href="http://www.firebase.com" target="_blank">Firebase</a>, for example, uses a JSON blob method to write data where the JSON is uploaded as the body of the request like this.
 			</div>
 			<div class="blob">
-				http://www.secondservice.com/youraccount/<br />
+				POST http://www.secondservice.com/youraccount/<br />
 				-> {"cat": "hat", "fish":"stick"}
 			</div>
 			<div class="text">
@@ -36,9 +36,9 @@
 			</div>
 			<div class="blob">
 				<div class="text light">[Event Happens on FirstService]</div>
-				http://www.query2json.com/{ID}?cat=hat&fish=stick<br />
+				GET http://www.query2json.com/{ID}?cat=hat&fish=stick<br />
 				<div class="text light">[Query2JSON Translates Request]</div>
-				http://www.secondservice.com/youraccount/<br />
+				POST http://www.secondservice.com/youraccount/<br />
 				-> {"cat": "hat", "fish":"stick"}
 			</div>
 			<div class="text">
