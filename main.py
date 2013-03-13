@@ -16,7 +16,7 @@ domain = "http://www.query2json.com/"
 # Link Model
 class Link(SuperModel):
 	url 			= db.StringProperty(required=True)
-	response 		= db.StringProperty(required=True)
+	response 		= db.StringProperty()
 
 # Create a new Link
 @route("/new/")

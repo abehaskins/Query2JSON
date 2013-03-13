@@ -45,6 +45,7 @@ article {
 	background-image: none;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	word-wrap: break-word;
 }
 h1 {
 	float: left;
