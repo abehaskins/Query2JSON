@@ -1,8 +1,8 @@
 $(function () {
 	$('.output').hide()
-	$('input').keypress(function (e) {
+	$('input[name=response]').keypress(function (e) {
 		if (e.which == 13) {
-			$.get('/new/', {url: $(this).val(), response: "cake cake cake"}, function (d) {
+			$.get('/new/', {url: $('input[name=url]').val(), response: $(this).val()? $(this).val():" "}, function (d) {
 				$('#url').text(d.url);
 				$('.output').slideDown();
 			}, 'JSON')

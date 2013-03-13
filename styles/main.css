@@ -82,6 +82,9 @@ input {
 	border-radius: 3px;
 	padding-left: 10px;
 }
+input[name=url] {
+	margin-bottom: 15px;
+}
 input:placeholder {
 	color: pink;
 }
