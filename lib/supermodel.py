@@ -76,8 +76,8 @@ def POST(sm, **data):
 					pass
 				else:
 					raise Exception("You dont have write permissions")
-			except AttributeError as e:
-				logging.debug(e)
+			except AttributeError:
+				pass#logging.debug(e)
 		else:
 			pass
 	if len(errors) is 0:
